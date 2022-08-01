@@ -1,0 +1,67 @@
+---
+title: "Livecoding"
+editor: visual
+format:
+  html:
+    code-fold: true
+    code-tools: true
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+checkbox <- function(texto) {
+  id <- paste0(sample(c(LETTERS, letters), 12), collapse = "")
+  
+  I(glue::glue(r"(<input type="checkbox" id="{id}" name="{id}" value="{id}">
+               <label for="{id}">{texto}</label><br>)"))
+  
+}
+
+checkboxes <- function(textos) {
+  for (texto in textos) {
+    print(checkbox(texto))
+  }
+} 
+
+```
+
+
+## Antes de empezar
+
+```{r results='asis'}
+antes <- c("Cursor grande o resaltado", 
+           "Screenkey", 
+           "Tener RStudio en default (colores, fuente y paneles)",
+           "Hacer zoom en RStudio", 
+           "Silenciar notificaciones")
+checkboxes(antes)
+```
+
+
+## Durante la clase
+
+```{r results='asis'}
+durante <- c("Usar `livecode`",
+             "Grabar")
+checkboxes(durante)
+```
+
+## Al inicio de la clase
+
+```{r results='asis'}
+inicio <- c("Repasar lo visto en la clase anterior",
+            "Anticipar los temas de esta clase",
+            "Comentar qué feedback aplicaste (si es necesario)")
+checkboxes(inicio)
+```
+
+
+
+## Al final de la clase
+
+```{r results='asis'}
+fin <- c("Repasar lo visto",
+         "Anticipar la próxima clase",
+         "Pasar link a la encuesta")
+checkboxes(fin)
+```

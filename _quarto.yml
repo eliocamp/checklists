@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Checklists"
+  navbar:
+    left:
+      - href: livecode/index.qmd
+        text: Livecode
+
+format:
+  html:
+    theme: journal
+    css: styles.css
+
+editor: visual
+
